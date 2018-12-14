@@ -5,20 +5,23 @@
     <title>Canvas Playground</title>
 </head>
 <body style="margin: 0">
-    <canvas id="canvas" style="display: block;">You browser is not supported. How's that? O_o</canvas>
+<canvas id="canvas" style="display: block;">You browser is not supported. How's that? O_o</canvas>
 
-    <script>
-         let canv = document.getElementById('canvas'),
-             ctx = canv.getContext('2d');
+<script>
+    let canv = document.getElementById('canvas'),
+        ctx = canv.getContext('2d');
 
-         canv.width = window.innerWidth;
-         canv.height = window.innerHeight;
+    canv.width = window.innerWidth;
+    canv.height = window.innerHeight;
 
-         // Code
+    // Code
 
-        ctx.fillStyle = 'orange';
-        ctx.fillRect(50, 50, 300, 200);
+    ctx.fillStyle = 'orange';
+    ctx.fillRect(50, 50, 300, 200);
 
-    </script>
+    ctx.strokeStyle = 'green';
+    ctx.strokeRect(150, 150, 280, 120);
+
+</script>
 </body>
 </html>
