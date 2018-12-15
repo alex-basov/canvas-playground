@@ -38,6 +38,17 @@
     ctx.strokeStyle = 'blue';
     ctx.stroke();
 
+    let grad = ctx.createLinearGradient(0, 0, 300, 0);
+    grad.addColorStop(0, 'magenta');
+    grad.addColorStop(.50, 'red');
+    grad.addColorStop(1, 'blue');
+
+    ctx.rotate(-13 * Math.PI / 180);
+    ctx.textAlign = 'left';
+    ctx.fillStyle = grad;
+    ctx.font = '30px Georgia';
+    ctx.fillText('Hello World', 50, 70);
+
 </script>
 </body>
 </html>
