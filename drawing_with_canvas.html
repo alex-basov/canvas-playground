@@ -11,14 +11,36 @@
 
 <script>
     let canv = document.getElementById('canvas'),
-        ctx = canv.getContext('2d');
+        ctx = canv.getContext('2d'),
+        isMouseDown = false;
 
     canv.width = window.innerWidth;
     canv.height = window.innerHeight;
 
     // Code
-  ctx.fillStyle = 'pink';
-  ctx.fillRect(20, 20, 50, 50);
+    canv.addEventListener('mousedown', () => {
+        isMouseDown = true;
+    });
+
+    canv.addEventListener('mouseup', () => {
+        isMouseDown = false;
+        ctx.beginPath();
+    });
+
+    ctx.lineWidth = 5 * 2;
+    canv.addEventListener('mousemove', (e) => {
+        if (isMouseDown) {
+            ctx.lineTo(e.clientX, e.clientY);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(e.clientX, e.clientY, 5, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.moveTo(e.clientX, e.clientY);
+        }
+    })
 
 </script>
 </body>
