@@ -26,6 +26,7 @@
     canv.addEventListener('mouseup', () => {
         isMouseDown = false;
         ctx.beginPath();
+        coords.push('mouseup');
     });
 
     ctx.lineWidth = 5 * 2;
