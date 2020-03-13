@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hangman</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.1/dist/css/foundation.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grid-container hangman-page">
+    <div class="grid-x">
+      <div class="cell">
+        <h1 class="h2">Designed for Hangman game</h1>
+        <canvas id="canvas">You browser is not supported. How's that? O_o</canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.querySelector('#canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+
+    console.log(canvas.width, canvas.height);
+
+    // .filStyle = 'color', .fillRect(0, 0, 10, 10)
+    // .lineWidth = 2, .strokeStyle = 'color', .strokeRect(0,0,10,10)
+    // .beginPath(), .moveTo(x, y), .lineTo(x1, x2), .stroke();
+
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = 'red';
+    // head
+    ctx.strokeRect(90, 20, 20, 20);
+    ctx.beginPath();
+    // neck
+    ctx.moveTo(100, 40);
+    ctx.lineTo(100, 85);
+    // left arm
+    ctx.moveTo(100, 60);
+    ctx.lineTo(75, 50);
+    // right arm
+    ctx.moveTo(100, 60);
+    ctx.lineTo(125, 50);
+    // left leg
+    ctx.moveTo(100, 83);
+    ctx.lineTo(75, 110);
+    // right leg
+    ctx.moveTo(100, 83);
+    ctx.lineTo(125, 110);
+    ctx.stroke();
+  </script>
+</body>
+</html>

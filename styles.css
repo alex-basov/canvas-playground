@@ -5,3 +5,11 @@ body {
 #canvas {
     display:block;
 }
+
+/* Hangman */
+
+.hangman-page canvas {
+  width: 200px;
+  height: 150px;
+  border: 1px solid #6b31ee;
+}
